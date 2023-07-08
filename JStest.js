@@ -20,16 +20,16 @@ function mintNFT (_name, _age, _country, _net_worth) {
         "Country": _country,
         "Net_worth" : _net_worth,
     };
-    NFTs.push(richest);
+    NFTs.unshift(richest);
     console.log("You have sucessfully added : " + _name);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    for( let i=0; i<NFTs.length; i++)
+    for( let i=NFTs.length-1; i>=0; i--)
     {
-        console.log("\nRank \t: " +  (i+1));
+        console.log("\nRank \t: " +  ((NFTs.length)-i));
         console.log("Name \t: " + NFTs[i].Name);
         console.log("Age \t: " + NFTs[i].Age);
         console.log("Country\t: " + NFTs[i].Country);
